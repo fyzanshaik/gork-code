@@ -1,4 +1,4 @@
-from functions.config import MAX_CHAR
+from config import MAX_CHAR
 import os
 
 def get_file_content(working_directory, file_path):
