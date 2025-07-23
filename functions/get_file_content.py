@@ -2,6 +2,7 @@ from config import MAX_CHAR
 import os
 
 def get_file_content(working_directory, file_path):
+    print("function get_file_content called")
     out_of_bound_error = f'Error: Cannot read "{file_path}" as it is outside the permitted working directory'
     file_not_found_error = f'Error: File not found or is not a regular file: "{file_path}"'
     
