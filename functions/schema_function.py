@@ -21,9 +21,9 @@ schema_get_file_content_info = types.FunctionDeclaration(
     parameters=types.Schema(
         type=types.Type.OBJECT,
         properties={
-            "file": types.Schema(
+            "file_path": types.Schema(
                 type=types.Type.STRING,
-                description="The file path to get file content from, relative to the working directory. If not provided, function will return an error.",
+                description="The file_path to get file content from, relative to the working directory. If not provided, function will return an error.",
             ),
         },
     ),
@@ -35,9 +35,13 @@ schema_write_file = types.FunctionDeclaration(
     parameters=types.Schema(
         type=types.Type.OBJECT,
         properties={
-            "file": types.Schema(
+            "file_path": types.Schema(
                 type=types.Type.STRING,
                 description="The file path to write in the specific file relative to the working directory. If not provided, function will return an error.",
+            ),
+            "content": types.Schema(
+                type=types.Type.STRING,
+                description="The provided content to write inside a file overwriting existing file. If not provided, function will return an error.",
             ),
         },
     ),
@@ -49,7 +53,7 @@ schema_run_python_file = types.FunctionDeclaration(
     parameters=types.Schema(
         type=types.Type.OBJECT,
         properties={
-            "file": types.Schema(
+            "file_path": types.Schema(
                 type=types.Type.STRING,
                 description="The file path to run a specific python file and obtain its output. If path not provided, function will return an error.",
             ),
