@@ -20,12 +20,12 @@ def run_python_file(working_directory, file_path, args=[]):
         return file_not_exist_error
     
     fileName = os.path.basename(file_path)
-    print(fileName[len(fileName)-2:])
+    # print(fileName[len(fileName)-2:])
     if fileName[len(fileName)-2:] != "py":
         return if_not_py_error
     
     args_to_pass = ["python3",fileName] + args
-    print(args_to_pass)
+    # print(args_to_pass)
     result_message = ""
     try:
         result_process = subprocess.run(args=args_to_pass,capture_output=True,timeout=30,cwd=working_directory_abs)

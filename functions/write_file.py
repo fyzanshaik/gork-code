@@ -14,7 +14,7 @@ def write_file(working_directory, file_path, content):
     if common_path != working_directory_abs:
         return out_of_bound_error
     
-    print(f"Full path: {full_path_abs}")
+    # print(f"Full path: {full_path_abs}")
     dirName = os.path.dirname(file_path)
     # print(dirName)
     directoryPath = os.path.join(working_directory_abs,dirName)
